@@ -100,7 +100,7 @@ def combine_html_files(html_files, css_path="myStyles.css",output_html="combined
         skipStartupTypeset: false
     };
 </script>
-<script src="file:///C:/Users/jaxan/AppData/Roaming/npm/node_modules/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 '''
 
     # Add HTML and HEAD section with optional CSS
@@ -141,8 +141,20 @@ def convert_to_pdf(input_html, output_pdf="output.pdf"):
 
 
 if __name__ == "__main__":
-    # Customize your HTML files list here
-    directory = "C:/CodingGeneral/chicagoClubManagement/aqua-blue/_build/aqua_blue/"
-    html_files = [os.path.join(directory, f) for f in os.listdir(directory) if f.endswith('.html')]
-    html_files.insert(0,"C:/CodingGeneral/chicagoClubManagement/aqua-blue/_build/aqua_blue.html")
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Build relative paths from the script's location
+    submodule_dir = os.path.join(script_dir, "_build", "aqua-blue", "aqua_blue")
+    local_html = os.path.join(script_dir, "_build", "aqua-blue", "aqua_blue.html")
+
+    # Get HTML files from submodule
+    html_files = [os.path.join(submodule_dir, f) for f in os.listdir(submodule_dir) if f.endswith('.html')]
+
+    # Add the local HTML file
+    html_files.insert(0, local_html)
+
+    # Combine HTML files
     combined_html = combine_html_files(html_files)
+
+    command = "wkhtmltopdf --enable-javascript --disable-smart-shrinking --no-stop-slow-scripts --debug-javascript --enable-local-file-access --print-media-type --javascript-delay 3000 --user-style-sheet myStyles.css \"combined.html\" documentation.pdf"
+    subprocess.run(command)

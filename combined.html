@@ -24,15 +24,20 @@
         skipStartupTypeset: false
     };
 </script>
-<script src="file:///C:/Users/jaxan/AppData/Roaming/npm/node_modules/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 <link rel="stylesheet" href="myStyles.css">
 </head><body>
-<!-- Start of C:/CodingGeneral/chicagoClubManagement/aqua-blue/_build/aqua_blue.html -->
+<!-- Start of C:\CodingGeneral\chicagoClubManagement\aqua-blue-pdf-reporting\_build\aqua-blue\aqua_blue.html -->
 <nav class="pdoc">
         <label id="navtoggle" for="togglestate" class="pdoc-button"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke-linecap='round' stroke="currentColor" stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg></label>
         <input id="togglestate" type="checkbox" aria-hidden="true" tabindex="-1">
-        <div>
+        <div>            <a class="pdoc-button module-list-button" href="../aqua-blue.html">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
+  <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+</svg>                &nbsp;aqua-blue</a>
+
             <img src="https://raw.githubusercontent.com/Chicago-Club-Management-Company/aqua-blue/refs/heads/main/assets/blue.jpg" class="logo" alt="project logo"/>
 
             <input type="search" placeholder="Search..." role="searchbox" aria-label="search"
@@ -89,7 +94,7 @@
     <main class="pdoc">
             <section class="module-info">
                     <h1 class="modulename">
-aqua_blue    </h1>
+<a href="./../aqua-blue.html">aqua-blue</a><wbr>.aqua_blue    </h1>
 
                         <div class="docstring"><h1 id="aqua-blue">aqua-blue</h1>
 
@@ -148,19 +153,19 @@ for instructions on how to contribute to <code>aqua-blue</code> </p>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
 
 <span class="c1"># create time series object to feed into echo state network</span>
-<span class="n">time_series</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/time_series.html#TimeSeries">aqua_blue.time_series.TimeSeries</a></span><span class="p">(</span><span class="n">dependent_variable</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="n">t</span><span class="p">)</span>
+<span class="n">time_series</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span><span class="p">(</span><span class="n">dependent_variable</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="n">t</span><span class="p">)</span>
 
 <span class="c1"># normalize</span>
-<span class="n">normalizer</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/utilities.html#Normalizer">aqua_blue.utilities.Normalizer</a></span><span class="p">()</span>
+<span class="n">normalizer</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">Normalizer</span><span class="p">()</span>
 <span class="n">time_series</span> <span class="o">=</span> <span class="n">normalizer</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">time_series</span><span class="p">)</span>
 
 <span class="c1"># make model and train</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/models.html#Model">aqua_blue.models.Model</a></span><span class="p">(</span>
-    <span class="n">reservoir</span><span class="o">=</span><span class="n"><a href="aqua_blue/reservoirs.html#DynamicalReservoir">aqua_blue.reservoirs.DynamicalReservoir</a></span><span class="p">(</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span>
+    <span class="n">reservoir</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">reservoirs</span><span class="o">.</span><span class="n">DynamicalReservoir</span><span class="p">(</span>
         <span class="n">reservoir_dimensionality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
         <span class="n">input_dimensionality</span><span class="o">=</span><span class="mi">2</span>
     <span class="p">),</span>
-    <span class="n">readout</span><span class="o">=</span><span class="n"><a href="aqua_blue/readouts.html#LinearReadout">aqua_blue.readouts.LinearReadout</a></span><span class="p">()</span>
+    <span class="n">readout</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">readouts</span><span class="o">.</span><span class="n">LinearReadout</span><span class="p">()</span>
 <span class="p">)</span>
 <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">time_series</span><span class="p">)</span>
 
@@ -224,17 +229,17 @@ with $1000$ timesteps. Then, we predict the next $1000$ timesteps.</p>
     <span class="n">y</span> <span class="o">=</span> <span class="n">solve_lv</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 
-    <span class="n">time_series</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/time_series.html#TimeSeries">aqua_blue.time_series.TimeSeries</a></span><span class="p">(</span><span class="n">dependent_variable</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">time_series</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span><span class="p">(</span><span class="n">dependent_variable</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="n">t</span><span class="p">)</span>
 
-    <span class="n">normalizer</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/utilities.html#Normalizer">aqua_blue.utilities.Normalizer</a></span><span class="p">()</span>
+    <span class="n">normalizer</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">Normalizer</span><span class="p">()</span>
     <span class="n">time_series</span> <span class="o">=</span> <span class="n">normalizer</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">time_series</span><span class="p">)</span>
 
-    <span class="n">model</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/models.html#Model">aqua_blue.models.Model</a></span><span class="p">(</span>
-        <span class="n">reservoir</span><span class="o">=</span><span class="n"><a href="aqua_blue/reservoirs.html#DynamicalReservoir">aqua_blue.reservoirs.DynamicalReservoir</a></span><span class="p">(</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span>
+        <span class="n">reservoir</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">reservoirs</span><span class="o">.</span><span class="n">DynamicalReservoir</span><span class="p">(</span>
             <span class="n">reservoir_dimensionality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
             <span class="n">input_dimensionality</span><span class="o">=</span><span class="mi">2</span>
         <span class="p">),</span>
-        <span class="n">readout</span><span class="o">=</span><span class="n"><a href="aqua_blue/readouts.html#LinearReadout">aqua_blue.readouts.LinearReadout</a></span><span class="p">()</span>
+        <span class="n">readout</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">readouts</span><span class="o">.</span><span class="n">LinearReadout</span><span class="p">()</span>
     <span class="p">)</span>
     <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">time_series</span><span class="p">)</span>
 
@@ -279,16 +284,16 @@ with $1000$ timesteps. Then, we predict the next $1000$ timesteps.</p>
     <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_date</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="o">/</span> <span class="mi">100</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
-    <span class="n">time_series</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/time_series.html#TimeSeries">aqua_blue.time_series.TimeSeries</a></span><span class="p">(</span><span class="n">dependent_variable</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="n">t</span><span class="p">)</span>
-    <span class="n">normalizer</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/utilities.html#Normalizer">aqua_blue.utilities.Normalizer</a></span><span class="p">()</span>
+    <span class="n">time_series</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span><span class="p">(</span><span class="n">dependent_variable</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">normalizer</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">Normalizer</span><span class="p">()</span>
     <span class="n">time_series</span> <span class="o">=</span> <span class="n">normalizer</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">time_series</span><span class="p">)</span>
 
-    <span class="n">model</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/models.html#Model">aqua_blue.models.Model</a></span><span class="p">(</span>
-        <span class="n">reservoir</span><span class="o">=</span><span class="n"><a href="aqua_blue/reservoirs.html#DynamicalReservoir">aqua_blue.reservoirs.DynamicalReservoir</a></span><span class="p">(</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span>
+        <span class="n">reservoir</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">reservoirs</span><span class="o">.</span><span class="n">DynamicalReservoir</span><span class="p">(</span>
             <span class="n">reservoir_dimensionality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
             <span class="n">input_dimensionality</span><span class="o">=</span><span class="mi">2</span>
         <span class="p">),</span>
-        <span class="n">readout</span><span class="o">=</span><span class="n"><a href="aqua_blue/readouts.html#LinearReadout">aqua_blue.readouts.LinearReadout</a></span><span class="p">()</span>
+        <span class="n">readout</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">readouts</span><span class="o">.</span><span class="n">LinearReadout</span><span class="p">()</span>
     <span class="p">)</span>
     <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">time_series</span><span class="p">)</span>
 
@@ -349,18 +354,18 @@ prediction. This is particularly useful for interfacing <code>aqua-blue</code> w
 <span class="s2">    &quot;&quot;&quot;</span>
 
     <span class="c1"># turn into a TimeSeries instance</span>
-    <span class="n">time_series</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/time_series.html#TimeSeries">aqua_blue.time_series.TimeSeries</a></span><span class="p">(</span><span class="o">**</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_str</span><span class="p">))</span>
+    <span class="n">time_series</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span><span class="p">(</span><span class="o">**</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_str</span><span class="p">))</span>
 
     <span class="c1"># normalize and feed into model</span>
-    <span class="n">normalizer</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/utilities.html#Normalizer">aqua_blue.utilities.Normalizer</a></span><span class="p">()</span>
+    <span class="n">normalizer</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">Normalizer</span><span class="p">()</span>
     <span class="n">normalized_time_series</span> <span class="o">=</span> <span class="n">normalizer</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">time_series</span><span class="p">)</span>
 
-    <span class="n">model</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/models.html#Model">aqua_blue.models.Model</a></span><span class="p">(</span>
-        <span class="n">reservoir</span><span class="o">=</span><span class="n"><a href="aqua_blue/reservoirs.html#DynamicalReservoir">aqua_blue.reservoirs.DynamicalReservoir</a></span><span class="p">(</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span>
+        <span class="n">reservoir</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">reservoirs</span><span class="o">.</span><span class="n">DynamicalReservoir</span><span class="p">(</span>
             <span class="n">reservoir_dimensionality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
             <span class="n">input_dimensionality</span><span class="o">=</span><span class="mi">2</span>
         <span class="p">),</span>
-        <span class="n">readout</span><span class="o">=</span><span class="n"><a href="aqua_blue/readouts.html#LinearReadout">aqua_blue.readouts.LinearReadout</a></span><span class="p">()</span>
+        <span class="n">readout</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">readouts</span><span class="o">.</span><span class="n">LinearReadout</span><span class="p">()</span>
     <span class="p">)</span>
     <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">normalized_time_series</span><span class="p">)</span>
 
@@ -387,7 +392,7 @@ prediction. This is particularly useful for interfacing <code>aqua-blue</code> w
 <p>Below is an example of generating explicit matrices for $W_\text{in}$ and $W_\text{res}$. Here, <code>sparsity=0.99</code> and
 <code>spectral_radius=1.2</code> respectively zero-out $99\%$ of $W_\text{res}$'s elements and force $W_\text{res}$ to have a
 <a href="https://en.wikipedia.org/wiki/Spectral_radius">spectral radius</a> of $1.2$. We also showcase the <code>&gt;&gt;</code> operator, which
-concatenates instances of <code><a href="aqua_blue/time_series.html#TimeSeries">aqua_blue.time_series.TimeSeries</a></code>.</p>
+concatenates instances of <code>aqua_blue.time_series.TimeSeries</code>.</p>
 
 <div class="pdoc-code codehilite">
 <pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -400,8 +405,8 @@ concatenates instances of <code><a href="aqua_blue/time_series.html#TimeSeries">
     <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5_000</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)))</span><span class="o">.</span><span class="n">T</span>
 
-    <span class="n">time_series</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/time_series.html#TimeSeries">aqua_blue.time_series.TimeSeries</a></span><span class="p">(</span><span class="n">dependent_variable</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="n">t</span><span class="p">)</span>
-    <span class="n">normalizer</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/utilities.html#Normalizer">aqua_blue.utilities.Normalizer</a></span><span class="p">()</span>
+    <span class="n">time_series</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span><span class="p">(</span><span class="n">dependent_variable</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">normalizer</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">Normalizer</span><span class="p">()</span>
     <span class="n">normalized_time_series</span> <span class="o">=</span> <span class="n">normalizer</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">time_series</span><span class="p">)</span>
     <span class="n">generator</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
@@ -416,8 +421,8 @@ concatenates instances of <code><a href="aqua_blue/time_series.html#TimeSeries">
         <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="p">)</span>
 
-    <span class="n">model</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/models.html#Model">aqua_blue.models.Model</a></span><span class="p">(</span>
-        <span class="n">reservoir</span><span class="o">=</span><span class="n"><a href="aqua_blue/reservoirs.html#DynamicalReservoir">aqua_blue.reservoirs.DynamicalReservoir</a></span><span class="p">(</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span>
+        <span class="n">reservoir</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">reservoirs</span><span class="o">.</span><span class="n">DynamicalReservoir</span><span class="p">(</span>
             <span class="n">reservoir_dimensionality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
             <span class="n">input_dimensionality</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
             <span class="n">w_res</span><span class="o">=</span><span class="n">w_res</span><span class="p">,</span>
@@ -425,7 +430,7 @@ concatenates instances of <code><a href="aqua_blue/time_series.html#TimeSeries">
             <span class="n">spectral_radius</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span>
             <span class="n">sparsity</span><span class="o">=</span><span class="mf">0.99</span>
         <span class="p">),</span>
-        <span class="n">readout</span><span class="o">=</span><span class="n"><a href="aqua_blue/readouts.html#LinearReadout">aqua_blue.readouts.LinearReadout</a></span><span class="p">()</span>
+        <span class="n">readout</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">readouts</span><span class="o">.</span><span class="n">LinearReadout</span><span class="p">()</span>
     <span class="p">)</span>
     <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">normalized_time_series</span><span class="p">)</span>
 
@@ -433,7 +438,7 @@ concatenates instances of <code><a href="aqua_blue/time_series.html#TimeSeries">
     <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">horizon</span><span class="o">=</span><span class="n">horizon</span><span class="p">)</span>
     <span class="n">prediction</span> <span class="o">=</span> <span class="n">normalizer</span><span class="o">.</span><span class="n">denormalize</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
 
-    <span class="n">actual_future</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/time_series.html#TimeSeries">aqua_blue.time_series.TimeSeries</a></span><span class="p">(</span>
+    <span class="n">actual_future</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span><span class="p">(</span>
         <span class="n">dependent_variable</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">times</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">times</span><span class="p">)))</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
         <span class="n">times</span><span class="o">=</span><span class="n">prediction</span><span class="o">.</span><span class="n">times</span>
     <span class="p">)</span>
@@ -481,17 +486,17 @@ Here, we use both hyperbolic tangent (<code>tanh</code>) and the <a href="https:
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)))</span><span class="o">.</span><span class="n">T</span>
 
     <span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">activation_function</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axs</span><span class="p">,</span> <span class="n">activation_functions</span><span class="p">):</span>
-        <span class="n">time_series</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/time_series.html#TimeSeries">aqua_blue.time_series.TimeSeries</a></span><span class="p">(</span><span class="n">dependent_variable</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="n">t</span><span class="p">)</span>
-        <span class="n">normalizer</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/utilities.html#Normalizer">aqua_blue.utilities.Normalizer</a></span><span class="p">()</span>
+        <span class="n">time_series</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span><span class="p">(</span><span class="n">dependent_variable</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">normalizer</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">Normalizer</span><span class="p">()</span>
         <span class="n">time_series</span> <span class="o">=</span> <span class="n">normalizer</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">time_series</span><span class="p">)</span>
 
-        <span class="n">model</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/models.html#Model">aqua_blue.models.Model</a></span><span class="p">(</span>
-            <span class="n">reservoir</span><span class="o">=</span><span class="n"><a href="aqua_blue/reservoirs.html#DynamicalReservoir">aqua_blue.reservoirs.DynamicalReservoir</a></span><span class="p">(</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span>
+            <span class="n">reservoir</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">reservoirs</span><span class="o">.</span><span class="n">DynamicalReservoir</span><span class="p">(</span>
                 <span class="n">reservoir_dimensionality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
                 <span class="n">input_dimensionality</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
                 <span class="n">activation_function</span><span class="o">=</span><span class="n">activation_functions</span><span class="p">[</span><span class="n">activation_function</span><span class="p">]</span>
             <span class="p">),</span>
-            <span class="n">readout</span><span class="o">=</span><span class="n"><a href="aqua_blue/readouts.html#LinearReadout">aqua_blue.readouts.LinearReadout</a></span><span class="p">()</span>
+            <span class="n">readout</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">readouts</span><span class="o">.</span><span class="n">LinearReadout</span><span class="p">()</span>
         <span class="p">)</span>
         <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">time_series</span><span class="p">)</span>
 
@@ -539,7 +544,7 @@ and use it for training and predicting temperatures.</p>
         <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">txt</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
         <span class="n">file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-        <span class="n">DATA</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/time_series.html#TimeSeries.from_csv">aqua_blue.time_series.TimeSeries.from_csv</a></span><span class="p">(</span>
+        <span class="n">DATA</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span><span class="o">.</span><span class="n">from_csv</span><span class="p">(</span>
             <span class="n">fp</span><span class="o">=</span><span class="n">file</span><span class="p">,</span>
             <span class="n">time_col</span><span class="o">=</span><span class="n">time_col</span><span class="p">,</span>
             <span class="n">dependent_var_cols</span><span class="o">=</span><span class="n">dependent_var_cols</span><span class="p">,</span>
@@ -547,12 +552,12 @@ and use it for training and predicting temperatures.</p>
             <span class="n">max_rows</span><span class="o">=</span><span class="mi">87</span><span class="p">,</span>
         <span class="p">)</span>
 
-    <span class="n">TRAIN_DATA</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/time_series.html#TimeSeries">aqua_blue.time_series.TimeSeries</a></span><span class="p">(</span>
+    <span class="n">TRAIN_DATA</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span><span class="p">(</span>
         <span class="n">times</span><span class="o">=</span><span class="n">DATA</span><span class="o">.</span><span class="n">times</span><span class="p">[:</span><span class="mi">82</span><span class="p">],</span> 
         <span class="n">dependent_variable</span><span class="o">=</span><span class="n">DATA</span><span class="o">.</span><span class="n">dependent_variable</span><span class="p">[:</span><span class="mi">82</span><span class="p">,</span> <span class="p">:]</span>
     <span class="p">)</span>
 
-    <span class="n">normalizer</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/utilities.html#Normalizer">aqua_blue.utilities.Normalizer</a></span><span class="p">()</span>
+    <span class="n">normalizer</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">Normalizer</span><span class="p">()</span>
     <span class="n">normalized_time_series</span> <span class="o">=</span> <span class="n">normalizer</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">TRAIN_DATA</span><span class="p">)</span>
 
     <span class="n">seed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
@@ -569,14 +574,14 @@ and use it for training and predicting temperatures.</p>
         <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="p">)</span>
 
-    <span class="n">model</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/models.html#Model">aqua_blue.models.Model</a></span><span class="p">(</span>
-        <span class="n">reservoir</span><span class="o">=</span><span class="n"><a href="aqua_blue/reservoirs.html#DynamicalReservoir">aqua_blue.reservoirs.DynamicalReservoir</a></span><span class="p">(</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span>
+        <span class="n">reservoir</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">reservoirs</span><span class="o">.</span><span class="n">DynamicalReservoir</span><span class="p">(</span>
             <span class="n">reservoir_dimensionality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
             <span class="n">w_in</span> <span class="o">=</span> <span class="n">w_in</span><span class="p">,</span>
             <span class="n">w_res</span> <span class="o">=</span> <span class="n">w_res</span><span class="p">,</span>
             <span class="n">input_dimensionality</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
         <span class="p">),</span>
-        <span class="n">readout</span><span class="o">=</span><span class="n"><a href="aqua_blue/readouts.html#LinearReadout">aqua_blue.readouts.LinearReadout</a></span><span class="p">(</span><span class="mf">1e-1</span><span class="p">)</span>
+        <span class="n">readout</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">readouts</span><span class="o">.</span><span class="n">LinearReadout</span><span class="p">(</span><span class="mf">1e-1</span><span class="p">)</span>
     <span class="p">)</span>
 
     <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">normalized_time_series</span><span class="p">)</span>
@@ -609,22 +614,22 @@ The predictions are written to a new csv file (<code>predicted-goldstocks.csv</c
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
 
-    <span class="n">goldstocks</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/time_series.html#TimeSeries.from_csv">aqua_blue.time_series.TimeSeries.from_csv</a></span><span class="p">(</span>
+    <span class="n">goldstocks</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span><span class="o">.</span><span class="n">from_csv</span><span class="p">(</span>
         <span class="n">fp</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;examples/goldstocks.csv&#39;</span><span class="p">),</span> 
         <span class="n">time_col</span><span class="o">=</span><span class="s1">&#39;DATE&#39;</span><span class="p">,</span>
         <span class="n">times_dtype</span><span class="o">=</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">,</span>
         <span class="n">dependent_var_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span>
     <span class="p">)</span>
 
-    <span class="n">normalizer</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/utilities.html#Normalizer">aqua_blue.utilities.Normalizer</a></span><span class="p">()</span>
+    <span class="n">normalizer</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">Normalizer</span><span class="p">()</span>
     <span class="n">normalized_time_series</span> <span class="o">=</span> <span class="n">normalizer</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">goldstocks</span><span class="p">)</span>
 
-    <span class="n">model</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/models.html#Model">aqua_blue.models.Model</a></span><span class="p">(</span>
-        <span class="n">reservoir</span><span class="o">=</span><span class="n"><a href="aqua_blue/reservoirs.html#DynamicalReservoir">aqua_blue.reservoirs.DynamicalReservoir</a></span><span class="p">(</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span>
+        <span class="n">reservoir</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">reservoirs</span><span class="o">.</span><span class="n">DynamicalReservoir</span><span class="p">(</span>
             <span class="n">reservoir_dimensionality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
             <span class="n">input_dimensionality</span><span class="o">=</span><span class="mi">5</span>
         <span class="p">),</span>
-        <span class="n">readout</span><span class="o">=</span><span class="n"><a href="aqua_blue/readouts.html#LinearReadout">aqua_blue.readouts.LinearReadout</a></span><span class="p">()</span>
+        <span class="n">readout</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">readouts</span><span class="o">.</span><span class="n">LinearReadout</span><span class="p">()</span>
     <span class="p">)</span>
 
     <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">normalized_time_series</span><span class="p">)</span>
@@ -666,18 +671,18 @@ The predictions are written to a new csv file (<code>predicted-goldstocks.csv</c
     <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5_000</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)))</span><span class="o">.</span><span class="n">T</span>
 
-    <span class="n">time_series</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/time_series.html#TimeSeries">aqua_blue.time_series.TimeSeries</a></span><span class="p">(</span><span class="n">dependent_variable</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="n">t</span><span class="p">)</span>
-    <span class="n">normalizer</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/utilities.html#Normalizer">aqua_blue.utilities.Normalizer</a></span><span class="p">()</span>
+    <span class="n">time_series</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span><span class="p">(</span><span class="n">dependent_variable</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">normalizer</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">Normalizer</span><span class="p">()</span>
     <span class="n">normalized_time_series</span> <span class="o">=</span> <span class="n">normalizer</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">time_series</span><span class="p">)</span>
 
-    <span class="n">model</span> <span class="o">=</span> <span class="n"><a href="aqua_blue/models.html#Model">aqua_blue.models.Model</a></span><span class="p">(</span>
-        <span class="n">reservoir</span><span class="o">=</span><span class="n"><a href="aqua_blue/reservoirs.html#DynamicalReservoir">aqua_blue.reservoirs.DynamicalReservoir</a></span><span class="p">(</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">aqua_blue</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span>
+        <span class="n">reservoir</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">reservoirs</span><span class="o">.</span><span class="n">DynamicalReservoir</span><span class="p">(</span>
             <span class="n">reservoir_dimensionality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
             <span class="n">input_dimensionality</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
             <span class="n">sparsity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
             <span class="n">spectral_radius</span><span class="o">=</span><span class="mf">0.95</span>
         <span class="p">),</span>
-        <span class="n">readout</span><span class="o">=</span><span class="n"><a href="aqua_blue/readouts.html#LinearReadout">aqua_blue.readouts.LinearReadout</a></span><span class="p">()</span>
+        <span class="n">readout</span><span class="o">=</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">readouts</span><span class="o">.</span><span class="n">LinearReadout</span><span class="p">()</span>
     <span class="p">)</span>
     <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">normalized_time_series</span><span class="p">)</span>
 
@@ -856,8 +861,8 @@ DEBUG:root:Model.times_detype set to float64
 
             </section>
     </main>
-<!-- End of C:/CodingGeneral/chicagoClubManagement/aqua-blue/_build/aqua_blue.html -->
-<!-- Start of C:/CodingGeneral/chicagoClubManagement/aqua-blue/_build/aqua_blue/datetimelikearray.html -->
+<!-- End of C:\CodingGeneral\chicagoClubManagement\aqua-blue-pdf-reporting\_build\aqua-blue\aqua_blue.html -->
+<!-- Start of C:\CodingGeneral\chicagoClubManagement\aqua-blue-pdf-reporting\_build\aqua-blue\aqua_blue\datetimelikearray.html -->
 <nav class="pdoc">
         <label id="navtoggle" for="togglestate" class="pdoc-button"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke-linecap='round' stroke="currentColor" stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg></label>
         <input id="togglestate" type="checkbox" aria-hidden="true" tabindex="-1">
@@ -865,7 +870,7 @@ DEBUG:root:Model.times_detype set to float64
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
   <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
-</svg>                &nbsp;aqua_blue</a>
+</svg>                &nbsp;aqua-blue.aqua_blue</a>
 
             <img src="https://raw.githubusercontent.com/Chicago-Club-Management-Company/aqua-blue/refs/heads/main/assets/blue.jpg" class="logo" alt="project logo"/>
 
@@ -926,7 +931,7 @@ DEBUG:root:Model.times_detype set to float64
     <main class="pdoc">
             <section class="module-info">
                     <h1 class="modulename">
-<a href="./../aqua_blue.html">aqua_blue</a><wbr>.datetimelikearray    </h1>
+<a href="./../../aqua-blue.html">aqua-blue</a><wbr>.<a href="./../aqua_blue.html">aqua_blue</a><wbr>.datetimelikearray    </h1>
 
                         <div class="docstring"><p>Module providing a timezone-aware wrapper for NumPy arrays.</p>
 
@@ -1941,8 +1946,8 @@ back to the specified timezone when accessed.</p>
                             </div>
                 </section>
     </main>
-<!-- End of C:/CodingGeneral/chicagoClubManagement/aqua-blue/_build/aqua_blue/datetimelikearray.html -->
-<!-- Start of C:/CodingGeneral/chicagoClubManagement/aqua-blue/_build/aqua_blue/models.html -->
+<!-- End of C:\CodingGeneral\chicagoClubManagement\aqua-blue-pdf-reporting\_build\aqua-blue\aqua_blue\datetimelikearray.html -->
+<!-- Start of C:\CodingGeneral\chicagoClubManagement\aqua-blue-pdf-reporting\_build\aqua-blue\aqua_blue\models.html -->
 <nav class="pdoc">
         <label id="navtoggle" for="togglestate" class="pdoc-button"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke-linecap='round' stroke="currentColor" stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg></label>
         <input id="togglestate" type="checkbox" aria-hidden="true" tabindex="-1">
@@ -1950,7 +1955,7 @@ back to the specified timezone when accessed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
   <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
-</svg>                &nbsp;aqua_blue</a>
+</svg>                &nbsp;aqua-blue.aqua_blue</a>
 
             <img src="https://raw.githubusercontent.com/Chicago-Club-Management-Company/aqua-blue/refs/heads/main/assets/blue.jpg" class="logo" alt="project logo"/>
 
@@ -2011,7 +2016,7 @@ back to the specified timezone when accessed.</p>
     <main class="pdoc">
             <section class="module-info">
                     <h1 class="modulename">
-<a href="./../aqua_blue.html">aqua_blue</a><wbr>.models    </h1>
+<a href="./../../aqua-blue.html">aqua-blue</a><wbr>.<a href="./../aqua_blue.html">aqua_blue</a><wbr>.models    </h1>
 
                         <div class="docstring"><p>Module defining models, i.e., compositions of reservoir(s) and readout layers.</p>
 
@@ -2211,7 +2216,7 @@ data and forecasting future values based on learned patterns.</p>
                 <section id="logger">
                     <div class="attr variable">
             <span class="name">logger</span>        =
-<span class="default_value">&lt;Logger <a href="">aqua_blue.models</a> (WARNING)&gt;</span>
+<span class="default_value">&lt;Logger aqua-blue.aqua_blue.models (WARNING)&gt;</span>
 
         
     </div>
@@ -2404,7 +2409,7 @@ is incompatible.</li>
                             <div id="Model.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">Model</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">reservoir</span><span class="p">:</span> <span class="n"><a href="reservoirs.html#Reservoir">aqua_blue.reservoirs.Reservoir</a></span>,</span><span class="param">	<span class="n">readout</span><span class="p">:</span> <span class="n"><a href="readouts.html#Readout">aqua_blue.readouts.Readout</a></span></span>)</span>
+        <span class="name">Model</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">reservoir</span><span class="p">:</span> <span class="n">aqua</span><span class="o">-</span><span class="n">blue</span><span class="o">.</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">reservoirs</span><span class="o">.</span><span class="n">Reservoir</span>,</span><span class="param">	<span class="n">readout</span><span class="p">:</span> <span class="n">aqua</span><span class="o">-</span><span class="n">blue</span><span class="o">.</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">readouts</span><span class="o">.</span><span class="n">Readout</span></span>)</span>
 
         
     </div>
@@ -2415,7 +2420,7 @@ is incompatible.</li>
                             </div>
                             <div id="Model.reservoir" class="classattr">
                                 <div class="attr variable">
-            <span class="name">reservoir</span><span class="annotation">: <a href="reservoirs.html#Reservoir">aqua_blue.reservoirs.Reservoir</a></span>
+            <span class="name">reservoir</span><span class="annotation">: aqua-blue.aqua_blue.reservoirs.Reservoir</span>
 
         
     </div>
@@ -2428,7 +2433,7 @@ is incompatible.</li>
                             </div>
                             <div id="Model.readout" class="classattr">
                                 <div class="attr variable">
-            <span class="name">readout</span><span class="annotation">: <a href="readouts.html#Readout">aqua_blue.readouts.Readout</a></span>
+            <span class="name">readout</span><span class="annotation">: aqua-blue.aqua_blue.readouts.Readout</span>
 
         
     </div>
@@ -2496,7 +2501,7 @@ is incompatible.</li>
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">train</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">input_time_series</span><span class="p">:</span> <span class="n"><a href="time_series.html#TimeSeries">aqua_blue.time_series.TimeSeries</a></span>,</span><span class="param">	<span class="n">warmup</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span></span><span class="return-annotation">):</span></span>
+        <span class="name">train</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">input_time_series</span><span class="p">:</span> <span class="n">aqua</span><span class="o">-</span><span class="n">blue</span><span class="o">.</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span>,</span><span class="param">	<span class="n">warmup</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span></span><span class="return-annotation">):</span></span>
 
                 <label class="view-source-button" for="Model.train-view-source"><span>View Source</span></label>
 
@@ -2579,7 +2584,7 @@ in the input time series.</li>
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">predict</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">horizon</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="n"><a href="time_series.html#TimeSeries">aqua_blue.time_series.TimeSeries</a></span>:</span></span>
+        <span class="name">predict</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">horizon</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="n">aqua</span><span class="o">-</span><span class="n">blue</span><span class="o">.</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span>:</span></span>
 
                 <label class="view-source-button" for="Model.predict-view-source"><span>View Source</span></label>
 
@@ -2661,8 +2666,8 @@ learned dynamics of the input time series.</p>
                             </div>
                 </section>
     </main>
-<!-- End of C:/CodingGeneral/chicagoClubManagement/aqua-blue/_build/aqua_blue/models.html -->
-<!-- Start of C:/CodingGeneral/chicagoClubManagement/aqua-blue/_build/aqua_blue/readouts.html -->
+<!-- End of C:\CodingGeneral\chicagoClubManagement\aqua-blue-pdf-reporting\_build\aqua-blue\aqua_blue\models.html -->
+<!-- Start of C:\CodingGeneral\chicagoClubManagement\aqua-blue-pdf-reporting\_build\aqua-blue\aqua_blue\readouts.html -->
 <nav class="pdoc">
         <label id="navtoggle" for="togglestate" class="pdoc-button"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke-linecap='round' stroke="currentColor" stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg></label>
         <input id="togglestate" type="checkbox" aria-hidden="true" tabindex="-1">
@@ -2670,7 +2675,7 @@ learned dynamics of the input time series.</p>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
   <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
-</svg>                &nbsp;aqua_blue</a>
+</svg>                &nbsp;aqua-blue.aqua_blue</a>
 
             <img src="https://raw.githubusercontent.com/Chicago-Club-Management-Company/aqua-blue/refs/heads/main/assets/blue.jpg" class="logo" alt="project logo"/>
 
@@ -2731,7 +2736,7 @@ learned dynamics of the input time series.</p>
     <main class="pdoc">
             <section class="module-info">
                     <h1 class="modulename">
-<a href="./../aqua_blue.html">aqua_blue</a><wbr>.readouts    </h1>
+<a href="./../../aqua-blue.html">aqua-blue</a><wbr>.<a href="./../aqua_blue.html">aqua_blue</a><wbr>.readouts    </h1>
 
                         <div class="docstring"><p>Module defining readout layers.</p>
 
@@ -2914,7 +2919,7 @@ Network (ESN) to output values.</p>
                 <section id="logger">
                     <div class="attr variable">
             <span class="name">logger</span>        =
-<span class="default_value">&lt;Logger <a href="">aqua_blue.readouts</a> (WARNING)&gt;</span>
+<span class="default_value">&lt;Logger aqua-blue.aqua_blue.readouts (WARNING)&gt;</span>
 
         
     </div>
@@ -3386,8 +3391,8 @@ the reservoir state to an output value.</p>
                             </div>
                 </section>
     </main>
-<!-- End of C:/CodingGeneral/chicagoClubManagement/aqua-blue/_build/aqua_blue/readouts.html -->
-<!-- Start of C:/CodingGeneral/chicagoClubManagement/aqua-blue/_build/aqua_blue/reservoirs.html -->
+<!-- End of C:\CodingGeneral\chicagoClubManagement\aqua-blue-pdf-reporting\_build\aqua-blue\aqua_blue\readouts.html -->
+<!-- Start of C:\CodingGeneral\chicagoClubManagement\aqua-blue-pdf-reporting\_build\aqua-blue\aqua_blue\reservoirs.html -->
 <nav class="pdoc">
         <label id="navtoggle" for="togglestate" class="pdoc-button"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke-linecap='round' stroke="currentColor" stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg></label>
         <input id="togglestate" type="checkbox" aria-hidden="true" tabindex="-1">
@@ -3395,7 +3400,7 @@ the reservoir state to an output value.</p>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
   <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
-</svg>                &nbsp;aqua_blue</a>
+</svg>                &nbsp;aqua-blue.aqua_blue</a>
 
             <img src="https://raw.githubusercontent.com/Chicago-Club-Management-Company/aqua-blue/refs/heads/main/assets/blue.jpg" class="logo" alt="project logo"/>
 
@@ -3477,7 +3482,7 @@ the reservoir state to an output value.</p>
     <main class="pdoc">
             <section class="module-info">
                     <h1 class="modulename">
-<a href="./../aqua_blue.html">aqua_blue</a><wbr>.reservoirs    </h1>
+<a href="./../../aqua-blue.html">aqua-blue</a><wbr>.<a href="./../aqua_blue.html">aqua_blue</a><wbr>.reservoirs    </h1>
 
                         <div class="docstring"><p>Module defining reservoirs.</p>
 
@@ -3726,7 +3731,7 @@ Networks (ESNs) by transforming input signals into high-dimensional representati
                 <section id="logger">
                     <div class="attr variable">
             <span class="name">logger</span>        =
-<span class="default_value">&lt;Logger <a href="">aqua_blue.reservoirs</a> (WARNING)&gt;</span>
+<span class="default_value">&lt;Logger aqua-blue.aqua_blue.reservoirs (WARNING)&gt;</span>
 
         
     </div>
@@ -4241,8 +4246,8 @@ Recommended values - [0.9, 1.2]</p>
                             </div>
                 </section>
     </main>
-<!-- End of C:/CodingGeneral/chicagoClubManagement/aqua-blue/_build/aqua_blue/reservoirs.html -->
-<!-- Start of C:/CodingGeneral/chicagoClubManagement/aqua-blue/_build/aqua_blue/time_series.html -->
+<!-- End of C:\CodingGeneral\chicagoClubManagement\aqua-blue-pdf-reporting\_build\aqua-blue\aqua_blue\reservoirs.html -->
+<!-- Start of C:\CodingGeneral\chicagoClubManagement\aqua-blue-pdf-reporting\_build\aqua-blue\aqua_blue\time_series.html -->
 <nav class="pdoc">
         <label id="navtoggle" for="togglestate" class="pdoc-button"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke-linecap='round' stroke="currentColor" stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg></label>
         <input id="togglestate" type="checkbox" aria-hidden="true" tabindex="-1">
@@ -4250,7 +4255,7 @@ Recommended values - [0.9, 1.2]</p>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
   <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
-</svg>                &nbsp;aqua_blue</a>
+</svg>                &nbsp;aqua-blue.aqua_blue</a>
 
             <img src="https://raw.githubusercontent.com/Chicago-Club-Management-Company/aqua-blue/refs/heads/main/assets/blue.jpg" class="logo" alt="project logo"/>
 
@@ -4329,7 +4334,7 @@ Recommended values - [0.9, 1.2]</p>
     <main class="pdoc">
             <section class="module-info">
                     <h1 class="modulename">
-<a href="./../aqua_blue.html">aqua_blue</a><wbr>.time_series    </h1>
+<a href="./../../aqua-blue.html">aqua-blue</a><wbr>.<a href="./../aqua_blue.html">aqua_blue</a><wbr>.time_series    </h1>
 
                         <div class="docstring"><p>Module defining the TimeSeries object</p>
 </div>
@@ -4639,7 +4644,7 @@ Recommended values - [0.9, 1.2]</p>
                 <section id="logger">
                     <div class="attr variable">
             <span class="name">logger</span>        =
-<span class="default_value">&lt;Logger <a href="">aqua_blue.time_series</a> (WARNING)&gt;</span>
+<span class="default_value">&lt;Logger aqua-blue.aqua_blue.time_series (WARNING)&gt;</span>
 
         
     </div>
@@ -5008,7 +5013,7 @@ Recommended values - [0.9, 1.2]</p>
                             <div id="TimeSeries.__init__" class="classattr">
                                 <div class="attr function">
             
-        <span class="name">TimeSeries</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">dependent_variable</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">floating</span><span class="p">]]</span>,</span><span class="param">	<span class="n">times</span><span class="p">:</span> <span class="n"><a href="datetimelikearray.html#DatetimeLikeArray">aqua_blue.datetimelikearray.DatetimeLikeArray</a></span></span>)</span>
+        <span class="name">TimeSeries</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">dependent_variable</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">floating</span><span class="p">]]</span>,</span><span class="param">	<span class="n">times</span><span class="p">:</span> <span class="n">aqua</span><span class="o">-</span><span class="n">blue</span><span class="o">.</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">datetimelikearray</span><span class="o">.</span><span class="n">DatetimeLikeArray</span></span>)</span>
 
         
     </div>
@@ -5032,7 +5037,7 @@ Recommended values - [0.9, 1.2]</p>
                             </div>
                             <div id="TimeSeries.times" class="classattr">
                                 <div class="attr variable">
-            <span class="name">times</span><span class="annotation">: <a href="datetimelikearray.html#DatetimeLikeArray">aqua_blue.datetimelikearray.DatetimeLikeArray</a></span>
+            <span class="name">times</span><span class="annotation">: aqua-blue.aqua_blue.datetimelikearray.DatetimeLikeArray</span>
 
         
     </div>
@@ -5241,7 +5246,7 @@ Recommended values - [0.9, 1.2]</p>
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">to_dict</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="n"><a href="#TimeSeriesTypedDict">TimeSeriesTypedDict</a></span>:</span></span>
+        <span class="name">to_dict</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="n">aqua</span><span class="o">-</span><span class="n">blue</span><span class="o">.</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeriesTypedDict</span>:</span></span>
 
                 <label class="view-source-button" for="TimeSeries.to_dict-view-source"><span>View Source</span></label>
 
@@ -5299,8 +5304,8 @@ Recommended values - [0.9, 1.2]</p>
                             </div>
                 </section>
     </main>
-<!-- End of C:/CodingGeneral/chicagoClubManagement/aqua-blue/_build/aqua_blue/time_series.html -->
-<!-- Start of C:/CodingGeneral/chicagoClubManagement/aqua-blue/_build/aqua_blue/utilities.html -->
+<!-- End of C:\CodingGeneral\chicagoClubManagement\aqua-blue-pdf-reporting\_build\aqua-blue\aqua_blue\time_series.html -->
+<!-- Start of C:\CodingGeneral\chicagoClubManagement\aqua-blue-pdf-reporting\_build\aqua-blue\aqua_blue\utilities.html -->
 <nav class="pdoc">
         <label id="navtoggle" for="togglestate" class="pdoc-button"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke-linecap='round' stroke="currentColor" stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg></label>
         <input id="togglestate" type="checkbox" aria-hidden="true" tabindex="-1">
@@ -5308,7 +5313,7 @@ Recommended values - [0.9, 1.2]</p>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
   <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
-</svg>                &nbsp;aqua_blue</a>
+</svg>                &nbsp;aqua-blue.aqua_blue</a>
 
             <img src="https://raw.githubusercontent.com/Chicago-Club-Management-Company/aqua-blue/refs/heads/main/assets/blue.jpg" class="logo" alt="project logo"/>
 
@@ -5357,7 +5362,7 @@ Recommended values - [0.9, 1.2]</p>
     <main class="pdoc">
             <section class="module-info">
                     <h1 class="modulename">
-<a href="./../aqua_blue.html">aqua_blue</a><wbr>.utilities    </h1>
+<a href="./../../aqua-blue.html">aqua-blue</a><wbr>.<a href="./../aqua_blue.html">aqua_blue</a><wbr>.utilities    </h1>
 
                         <div class="docstring"><p>This module provides simple utilities for processing TimeSeries instances.</p>
 </div>
@@ -5622,7 +5627,7 @@ to restore the original scale of the data when denormalizing.</p>
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">normalize</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">time_series</span><span class="p">:</span> <span class="n"><a href="time_series.html#TimeSeries">aqua_blue.time_series.TimeSeries</a></span></span><span class="return-annotation">) -> <span class="n"><a href="time_series.html#TimeSeries">aqua_blue.time_series.TimeSeries</a></span>:</span></span>
+        <span class="name">normalize</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">time_series</span><span class="p">:</span> <span class="n">aqua</span><span class="o">-</span><span class="n">blue</span><span class="o">.</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span></span><span class="return-annotation">) -> <span class="n">aqua</span><span class="o">-</span><span class="n">blue</span><span class="o">.</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span>:</span></span>
 
                 <label class="view-source-button" for="Normalizer.normalize-view-source"><span>View Source</span></label>
 
@@ -5687,7 +5692,7 @@ to restore the original scale of the data when denormalizing.</p>
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">denormalize</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">time_series</span><span class="p">:</span> <span class="n"><a href="time_series.html#TimeSeries">aqua_blue.time_series.TimeSeries</a></span></span><span class="return-annotation">) -> <span class="n"><a href="time_series.html#TimeSeries">aqua_blue.time_series.TimeSeries</a></span>:</span></span>
+        <span class="name">denormalize</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">time_series</span><span class="p">:</span> <span class="n">aqua</span><span class="o">-</span><span class="n">blue</span><span class="o">.</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span></span><span class="return-annotation">) -> <span class="n">aqua</span><span class="o">-</span><span class="n">blue</span><span class="o">.</span><span class="n">aqua_blue</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">TimeSeries</span>:</span></span>
 
                 <label class="view-source-button" for="Normalizer.denormalize-view-source"><span>View Source</span></label>
 
@@ -5841,5 +5846,5 @@ Values between 1-1.5 are recommended for tasks that are memory dependent.</li>
 
                 </section>
     </main>
-<!-- End of C:/CodingGeneral/chicagoClubManagement/aqua-blue/_build/aqua_blue/utilities.html -->
+<!-- End of C:\CodingGeneral\chicagoClubManagement\aqua-blue-pdf-reporting\_build\aqua-blue\aqua_blue\utilities.html -->
 </body></html>
