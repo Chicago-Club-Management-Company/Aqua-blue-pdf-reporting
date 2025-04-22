@@ -1,0 +1,153 @@
+
+* {
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+}
+    nav{
+        display: none !important
+    }
+    iframe {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+    }   
+    body {
+        font-family: Arial, sans-serif, "Segoe UI Emojie", "Apple color Emoji", "Noto Color Emoji";
+        font-size: 13px;
+        line-height: 1.6;
+        margin: .5in;
+        background-color: #fff;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: bold;
+        margin-top: 12px;
+        margin-bottom: 4px;
+        page-break-after: avoid;
+        font-family: Arial, sans-serif, "Segoe UI Emojie", "Apple color Emoji", "Noto Color Emoji";
+    }
+
+    h1 { font-size: 20px; }
+    h2 { font-size: 18px; }
+    h3 { font-size: 16px; }
+
+    p {
+        margin: 2px 0;
+        orphans: 3;
+        widows: 3;
+        max-width: 90%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;  
+        padding: .5em; 
+    }
+    
+    .code-block {
+        padding: .5em;                 /* Some padding around the code */
+        border: none;                 /* No border */
+        margin: 0;                    /* No margin */
+        font-family: "Courier New", monospace, sans-serif;  /* Clear, readable font */
+        font-size: 12px;              /* Slightly larger font */
+        color: #333;                  /* Dark text color */
+        white-space: pre-wrap;        /* Allow line wrapping */
+        word-wrap: break-word;        /* Break long words if needed */
+        line-height: 1.5;             /* Better line height for readability */
+        break-inside:auto;
+        page-break-inside: auto;
+        overflow: visible;
+        display: block;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        background-color: #f4f4f4;
+    }
+
+    /* Inline code */
+   /* Code elements within paragraphs or other text content */
+    code {
+        font-family: "Courier New", monospace, sans-serif; /* Readable monospace font */
+        background-color: #f4f4f4;  /* Slight background to differentiate from regular text */
+        padding: 0 4px;              /* Add some padding */
+        border-radius: 3px;          /* Rounded edges */
+        font-size: 12px;             /* Adjust font size */
+        color: #333;                 /* Match text color */
+    }
+        
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 6px 0;
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 4px;
+        border: 1px solid #ccc;
+    }
+
+
+    .no-print {
+        display: none;
+    }
+
+    #mod-aqua_blue-view-source{
+        display: none;
+    }
+    .view-source-button{
+        display: none !important;
+    }
+
+    .view-source-togle-state, .view-source-toggle-state ~ .pdoc-code{
+        display:none !important;
+    }
+
+    input{
+        display:none !important;
+    }
+
+    .modulename{
+        font-size: 33px;
+        display:block;
+        font-family: system-ui, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        padding-bottom: 1em;
+    }
+
+    .docstring{
+    font-family: system-ui, "Segoe UI",  "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+    margin-bottom: .5em;
+    }
+
+    .attr{
+        background-color: #f4f4f4;
+    }
+
+    .name{
+        color: #0066bb;
+    }
+    .def{
+        color: rgb(0,136,0);
+    }
+    .param{
+        text-wrap-mode: nowrap;
+        display: block;
+    }
+
+    .pdoc-code{
+        background-color:#f4f4f4;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+    
+    hr{
+        display:none !important;
+    }
+    .pdoc-code span{
+        width: 80vb;
+        display: inline;
+        white-space: normal;
+    }
+
