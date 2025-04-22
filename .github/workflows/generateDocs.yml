@@ -1,0 +1,35 @@
+name: generateDocs
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+
+  buildandgeneratepdf:
+    name: setup,generateDocs
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+    permissions:
+      contents: read
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Set up dev environment
+        run: >-
+          pip install .[dev]
+      - name: generate pdoc information
+        run: >-
+          pdoc -d google ./submodule/aqua-blue/ -o _build --math --logo "https://raw.githubusercontent.com/Chicago-Club-Management-Company/aqua-blue/refs/heads/main/assets/blue.jpg" --favicon "https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f30a.png"
+      - name: convert to pdf
+        run: >-
+          python .\fullProcess.py
