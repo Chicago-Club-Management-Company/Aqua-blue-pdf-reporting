@@ -1,0 +1,3 @@
+[submodule "submodule/aqua-blue"]
+	path = submodule/aqua-blue
+	url = https://github.com/Chicago-Club-Management-Company/aqua-blue.git
