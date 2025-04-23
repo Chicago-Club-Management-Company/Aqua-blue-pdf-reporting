@@ -144,8 +144,8 @@ if __name__ == "__main__":
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
     # Build relative paths from the script's location
-    submodule_dir = os.path.join(script_dir, "_build", "aqua-blue", "aqua_blue")
-    local_html = os.path.join(script_dir, "_build", "aqua-blue", "aqua_blue.html")
+    submodule_dir = os.path.join(script_dir, "_build",  "aqua_blue")
+    local_html = os.path.join(script_dir, "_build",  "aqua_blue.html")
 
     # Get HTML files from submodule
     html_files = [os.path.join(submodule_dir, f) for f in os.listdir(submodule_dir) if f.endswith('.html')]
