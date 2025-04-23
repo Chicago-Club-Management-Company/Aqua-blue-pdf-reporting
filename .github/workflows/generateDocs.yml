@@ -27,6 +27,10 @@ jobs:
       - name: Download wkhtmltopdf
         run: >-
           sudo apt-get install -y wkhtmltopdf
+      - name: Check wkhtmltopdf install
+        run: |
+          which wkhtmltopdf
+          wkhtmltopdf --version
       - name: Set up dev environment
         run: >-
           pip install .[dev]
