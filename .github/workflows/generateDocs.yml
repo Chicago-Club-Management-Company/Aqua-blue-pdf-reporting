@@ -64,5 +64,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GH_TOKEN }}
-          publish_dir: ${{ runner.temp }}
+          publish_dir: ./outputDir
           publish_branch: gh-pages
