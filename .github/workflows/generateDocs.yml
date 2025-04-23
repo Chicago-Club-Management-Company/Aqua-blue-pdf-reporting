@@ -54,9 +54,12 @@ jobs:
         with:
           name: combined-html
           path: combined.html
+      - name: create temp directory
+        run: >-
+          mkdir outputDir
       - name: Move only the PDF to temp dir
         run: |
-          cp documentation.pdf $RUNNER_TEMP/
+          cp documentation.pdf outputDir/
       - name: Deploy PDF to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
