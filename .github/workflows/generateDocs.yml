@@ -24,6 +24,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Download wkhtmltopdf
+        run: >-
+          sudo apt-get install wkhtmltopdf
       - name: Set up dev environment
         run: >-
           pip install .[dev]
