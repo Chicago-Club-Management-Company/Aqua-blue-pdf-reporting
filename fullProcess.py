@@ -157,4 +157,4 @@ if __name__ == "__main__":
     combined_html = combine_html_files(html_files)
 
     command = "wkhtmltopdf --enable-javascript --disable-smart-shrinking --no-stop-slow-scripts --debug-javascript --enable-local-file-access --print-media-type --javascript-delay 3000 --user-style-sheet myStyles.css \"combined.html\" documentation.pdf"
-    subprocess.run(["/usr/local/bin/wkhtmltopdf", command])
+    subprocess.run(["/usr/bin/wkhtmltopdf", command])
