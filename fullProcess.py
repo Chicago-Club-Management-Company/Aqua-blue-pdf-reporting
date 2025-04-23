@@ -157,7 +157,7 @@ if __name__ == "__main__":
     combined_html = combine_html_files(html_files)
 
     command = [
-    "wkhtmltopdf",
+    "/usr/bin/wkhtmltopdf",  # or just "wkhtmltopdf" if PATH is correct
     "--enable-javascript",
     "--disable-smart-shrinking",
     "--no-stop-slow-scripts",
@@ -168,6 +168,6 @@ if __name__ == "__main__":
     "--user-style-sheet", "myStyles.css",
     "combined.html",
     "documentation.pdf"
-    ]    
-    
-    subprocess.run(["/usr/bin/wkhtmltopdf", command])
+]   
+
+    subprocess.run(command)
