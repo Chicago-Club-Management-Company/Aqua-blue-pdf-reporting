@@ -24,19 +24,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Download wkhtmltopdf with Qt
-        run: |
-          wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
-          sudo apt-get update
-          sudo apt-get install -y libjpeg-turbo8 libxrender1 xfonts-base xfonts-75dpi
-          sudo dpkg -i wkhtmltox_0.12.6-1.focal_amd64.deb
-      - name: Check wkhtmltopdf install
-        run: |
-          which wkhtmltopdf
-          wkhtmltopdf --version
       - name: Set up dev environment
         run: >-
           pip install .[dev]
+      - name: Build docker image for wkhtmtopdf
+        run: >-
+          docker build -f Dockerfile.dockerfile -t wkhtmtopdf-0.12.6 .
       - name: generate pdoc information
         run: >-
           pdoc -d google submodule/aqua-blue/aqua_blue -o _build --math --logo "https://raw.githubusercontent.com/Chicago-Club-Management-Company/aqua-blue/refs/heads/main/assets/blue.jpg" --favicon "https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f30a.png"
@@ -45,13 +38,7 @@ jobs:
           python fullProcess.py
       - name: generate pdf file
         run: >-
-          strace -o wkhtmltopdf.log /usr/local/bin/wkhtmltopdf --enable-javascript --disable-smart-shrinking --no-stop-slow-scripts --debug-javascript --enable-local-file-access --print-media-type --javascript-delay 3000 --user-style-sheet myStyles.css "combined.html" documentation.pdf
-      - name: check log file
-        run: >-
-          cat wkhtmltopdf.log
-      - name: check file directory
-        run: >-
-          ls
+          MSYS_NO_PATHCONV=1 docker run --rm -v $(pwd):/data wkhtmtopdf-0.12.6 wkhtmltopdf --enable-javascript --disable-smart-shrinking --no-stop-slow-scripts --debug-javascript --enable-local-file-access --print-media-type --javascript-delay 3000 --user-style-sheet myStyles.css "file:///data/combined.html" documentation.pdf
       - name: Upload generated PDF
         uses: actions/upload-artifact@v4
         with:
