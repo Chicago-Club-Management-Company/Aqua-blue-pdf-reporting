@@ -47,9 +47,6 @@ jobs:
       - name: generate pdf file
         run: >-
           python createPDF.py
-      - name: Show wkhtmltopdf log output
-        run: >-
-          cat wkhtmltopdf.log
       - name: check file directory
         run: >-
           ls
