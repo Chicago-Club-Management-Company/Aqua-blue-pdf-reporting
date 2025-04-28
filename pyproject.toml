@@ -3,7 +3,13 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["submodule"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+submodule = ["README.md", "examples/*"]
+
+[tool.setuptools.packages.find]
+where = ["submodule"]
 
 [project]
 name = "aqua-blue-pdf-reporting"
