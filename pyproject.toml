@@ -31,7 +31,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/jhenry77/Aqua-blue-pdf-reporting"
+Homepage = "https://github.com/Chicago-Club-Management-Company/Aqua-blue-pdf-reporting"
 
 [project.optional-dependencies]
 dev = [
