@@ -26,9 +26,10 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Download wkhtmltopdf with Qt
         run: |
-          wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox-0.12.6-1_linux-generic-amd64.tar.xz
-          tar -xf wkhtmltox-0.12.6-1_linux-generic-amd64.tar.xz
-          sudo mv wkhtmltox/bin/wkhtmltopdf /usr/local/bin/
+          wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
+          sudo apt-get update
+          sudo apt-get install -y libjpeg-turbo8 libxrender1 xfonts-base xfonts-75dpi
+          sudo dpkg -i wkhtmltox_0.12.6-1.focal_amd64.deb
       - name: Check wkhtmltopdf install
         run: |
           which wkhtmltopdf
