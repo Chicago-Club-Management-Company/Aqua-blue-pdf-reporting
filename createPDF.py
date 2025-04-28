@@ -19,21 +19,12 @@ command = [
 "combined.html",
 "documentation.pdf"
 ]
-try:
-    result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
-    print(result.stdout.decode())
-    print(result.stderr.decode())
-
-    print("job is completed and pdf has been created")
-    print(f"PDF file created at: {os.path.abspath('documentation.pdf')}")
-
-    # **Debug: Check if PDF file exists**
-    if os.path.exists("documentation.pdf"):
-        print("DEBUG: documentation.pdf EXISTS")
-    else:
-        print("DEBUG: documentation.pdf NOT FOUND")
-
-except subprocess.CalledProcessError as e:
-    print("ERROR: Subprocess failed with exit code", e.returncode)
-    print("STDOUT:", e.stdout.decode())
-    print("STDERR:", e.stderr.decode())
+with open("wkhtmltopdf.log", "w") as log_file:
+    try:
+        result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, check=True)
+        log_file.write(result.stdout + result.stderr)  # Capture all output
+        print("✅ wkhtmltopdf executed successfully!")
+    except subprocess.CalledProcessError as e:
+        log_file.write(f"ERROR: Subprocess failed with exit code {e.returncode}\n")
+        log_file.write(e.stdout + e.stderr)
+        print(f"❌ Error! Check wkhtmltopdf.log for details.")
