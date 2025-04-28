@@ -153,11 +153,11 @@ if __name__ == "__main__":
 
     # command = "wkhtmltopdf --enable-javascript --disable-smart-shrinking --no-stop-slow-scripts --debug-javascript --enable-local-file-access --print-media-type --javascript-delay 3000 --user-style-sheet myStyles.css \"combined.html\" documentation.pdf"
     command = [
+    "xvfb-run",
     "/usr/local/bin/wkhtmltopdf",  # or just "wkhtmltopdf" if PATH is correct
     "--enable-javascript",
     "--disable-smart-shrinking",
     "--no-stop-slow-scripts",
-    "--debug-javascript",
     "--enable-local-file-access",
     "--print-media-type",
     "--javascript-delay", "3000",
