@@ -165,7 +165,7 @@ if __name__ == "__main__":
     "combined.html",
     "documentation.pdf"
     ]
-    subprocess.run(command)
+    subprocess.call(command)
 
     print("job is completed and pdf has been created")
 
