@@ -131,13 +131,8 @@ def combine_html_files(html_files, css_path="myStyles.css",output_html="combined
         f.write("\n".join(combined_content))
 
     print(f"Combined HTML written to {output_html}")
+    print(f"File Location: {os.path.abspath(output_html)}")
     return output_html
-
-def convert_to_pdf(input_html, output_pdf="output.pdf"):
-    # Run wkhtmltopdf
-    cmd = ["wkhtmltopdf", "--print-media-type", "--disable-smart-shrinking", input_html, output_pdf]
-    subprocess.run(cmd, check=True)
-    print(f"PDF written to {output_pdf}")
 
 
 if __name__ == "__main__":
