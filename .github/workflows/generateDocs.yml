@@ -46,7 +46,7 @@ jobs:
           python fullProcess.py
       - name: generate pdf file
         run: >-
-          strace -o wkhtmltopdf.log/usr/local/bin/wkhtmltopdf --log-level info --enable-javascript --disable-smart-shrinking --no-stop-slow-scripts --debug-javascript --enable-local-file-access --print-media-type --javascript-delay 3000 --user-style-sheet myStyles.css "combined.html" documentation.pdf
+          strace -o wkhtmltopdf.log /usr/local/bin/wkhtmltopdf --enable-javascript --disable-smart-shrinking --no-stop-slow-scripts --debug-javascript --enable-local-file-access --print-media-type --javascript-delay 3000 --user-style-sheet myStyles.css "combined.html" documentation.pdf
       - name: check log file
         run: >-
           cat wkhtmltopdf.log
