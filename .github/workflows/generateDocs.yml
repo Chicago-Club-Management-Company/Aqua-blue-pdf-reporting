@@ -9,7 +9,7 @@ jobs:
 
   buildandgeneratepdf:
     name: setup,generateDocs
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         python-version: [3.12]
