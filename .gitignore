@@ -173,3 +173,5 @@ cython_debug/
 
 scratch.py
 coverage.json
+combined.html
+documentation.pdf
