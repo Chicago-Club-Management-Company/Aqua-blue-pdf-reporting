@@ -42,8 +42,10 @@ jobs:
         run: >-
           pdoc -d google submodule/aqua-blue/aqua_blue -o _build --math --logo "https://raw.githubusercontent.com/Chicago-Club-Management-Company/aqua-blue/refs/heads/main/assets/blue.jpg" --favicon "https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f30a.png"
       - name: convert to pdf
-        run: |
+        run: >-
           python fullProcess.py
+      - name: check file directory
+        run: >-
           ls
       - name: Upload generated PDF
         uses: actions/upload-artifact@v4
