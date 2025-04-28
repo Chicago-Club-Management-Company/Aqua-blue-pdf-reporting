@@ -31,7 +31,7 @@ jobs:
         run: >-
           docker build -f Dockerfile.dockerfile -t wkhtmtopdf-0.12.6 .
       - name: Generate pdoc documentation from source
-        working-directory: /submodule/aqua-blue/aqua_blue
+        working-directory: /submodule/aqua_blue/
         run: >-
           pdoc --html . -o ../../_build --math --logo "https://raw.githubusercontent.com/YourOrg/YourRepo/refs/heads/main/assets/blue.jpg" --favicon "https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f30a.png"
       - name: create html file
