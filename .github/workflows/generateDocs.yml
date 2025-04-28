@@ -26,7 +26,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Set up dev environment
         run: >-
-          pip install -d ".[dev]"
+          pip install -e ".[dev]"
       - name: Build docker image for wkhtmtopdf
         run: >-
           docker build -f Dockerfile.dockerfile -t wkhtmtopdf-0.12.6 .
