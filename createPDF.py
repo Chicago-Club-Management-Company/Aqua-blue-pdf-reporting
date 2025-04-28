@@ -9,7 +9,7 @@ import re
 command = [
 "wkhtmltopdf",
 # "/usr/local/bin/wkhtmltopdf",
-"--log-level info",
+# "--log-level info",
   # or just "wkhtmltopdf" if PATH is correct
 "--enable-javascript",
 "--debug-javascript",
