@@ -27,9 +27,9 @@ jobs:
       - name: Download wkhtmltopdf with Qt
         run: |
           sudo apt-get update
-          sudo apt-get install -y libssl xfonts-75dpi xfonts-base 
+          sudo apt-get install -y xvfb libfontconfig libfreetype6 libx11-6 libxext6 libxrender1 xfonts-base xfonts-75dpi
           wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb
-          sudo dpkg -i wkhtmltox_0.12.6-1.bionic_amd64.deb
+          sudo dpkg -i wkhtmltox_0.12.6-1.bionic_amd64.deb || sudo apt-get -f install
           sudo apt-get install -f  # Install dependencies if required
       - name: Check wkhtmltopdf install
         run: |
