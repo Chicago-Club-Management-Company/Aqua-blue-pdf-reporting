@@ -32,7 +32,7 @@ jobs:
           docker build -f Dockerfile.dockerfile -t wkhtmtopdf-0.12.6 .
       - name: generate pdoc information
         run: >-
-          pdoc -d google .submodule/aqua-blue/aqua_blue -o _build --math --logo "https://raw.githubusercontent.com/Chicago-Club-Management-Company/aqua-blue/refs/heads/main/assets/blue.jpg" --favicon "https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f30a.png"
+          pdoc -d google submodule/aqua-blue/aqua_blue -o _build --math --logo "https://raw.githubusercontent.com/Chicago-Club-Management-Company/aqua-blue/refs/heads/main/assets/blue.jpg" --favicon "https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f30a.png"
       - name: create html file
         run: >-
           python fullProcess.py
