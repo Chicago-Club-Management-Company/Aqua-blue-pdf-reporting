@@ -32,7 +32,7 @@ jobs:
           docker build -f Dockerfile.dockerfile -t wkhtmtopdf-0.12.6 .
       - name: list files
         run: >-
-          ls ${{ github.workspace }}/submodule/aqua-blue/aqua_blue
+          ls ${{ github.workspace }}/submodule/aqua-blue/
       - name: Generate pdoc documentation from source
         working-directory: ${{ github.workspace }}/submodule/aqua-blue
         run: >-
