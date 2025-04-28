@@ -24,16 +24,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install missing libssl1.1 dependency
-        run: |
-          wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.1/libssl1.1_1.1.1f-1ubuntu2.19_amd64.deb
-          sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.19_amd64.deb
       - name: Download wkhtmltopdf with Qt
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb libfontconfig libfreetype6 libx11-6 libxext6 libxrender1 xfonts-base xfonts-75dpi
-          wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb
-          sudo dpkg -i wkhtmltox_0.12.6-1.bionic_amd64.deb || sudo apt-get -f install
+          sudo apt-get install -y libssl3 xfonts-75dpi xfonts-base 
+          wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+          sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_amd64.deb
           sudo apt-get install -f  # Install dependencies if required
       - name: Check wkhtmltopdf install
         run: |
