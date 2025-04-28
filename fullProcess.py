@@ -171,3 +171,7 @@ if __name__ == "__main__":
     "documentation.pdf"
     ]
     subprocess.run(command)
+
+    print("job is completed and pdf has been created")
+
+    print(f"PDF file created at: {os.path.abspath("documentation.pdf")}")
