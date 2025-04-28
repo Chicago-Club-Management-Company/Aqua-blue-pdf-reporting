@@ -44,9 +44,6 @@ jobs:
       - name: create html file
         run: >-
           python fullProcess.py
-      - name: Check memory usage
-        run: >-
-          free -h
       - name: generate pdf file
         run: >-
           python createPDF.py

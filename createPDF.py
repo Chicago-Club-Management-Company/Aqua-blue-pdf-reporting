@@ -9,8 +9,8 @@ import re
 command = [
 "/usr/local/bin/wkhtmltopdf",  # or just "wkhtmltopdf" if PATH is correct
 "--enable-javascript",
-"--disable-smart-shrinking",
 "--debug-javascript",
+"--disable-smart-shrinking",
 "--no-stop-slow-scripts",
 "--enable-local-file-access",
 "--print-media-type",
