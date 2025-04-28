@@ -26,9 +26,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Download wkhtmltopdf with Qt
         run: |
-          sudo apt-get update
-          sudo apt-get install -y libssl3 xfonts-75dpi xfonts-base 
-          sudo apt-get install wkhtmltopdf=0.12.6
+          wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox-0.12.6-1_linux-generic-amd64.tar.xz
+          tar -xf wkhtmltox-0.12.6-1_linux-generic-amd64.tar.xz
+          sudo mv wkhtmltox/bin/wkhtmltopdf /usr/local/bin/
       - name: Check wkhtmltopdf install
         run: |
           which wkhtmltopdf
