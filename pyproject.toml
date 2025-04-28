@@ -15,7 +15,7 @@ where = ["submodule"]
 name = "aqua-blue-pdf-reporting"
 dynamic = ["version"]
 description = "PDF reporting for aqua-blue"
-readme = "README.md"
+readme = "submodule/aqua_blue/README.md"
 license = "MIT"
 requires-python = ">=3.9"
 authors = [{ name = "Jackson Henry", email = "jackson.henry@ccmc.global" }]
